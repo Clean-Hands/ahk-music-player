@@ -33,6 +33,8 @@ GuiClose:
 
 
 Import:
+	Select := 0
+	GuiControl,, Shuffle, 0
 	if (!MusicLocation)
 		MusicLocation := A_Desktop
 	Gui, Import:New
@@ -44,6 +46,7 @@ Import:
 	Gui, Add, Button, x+1 y54 h22 w60 gLocate, Locate...
 	Gui, Font, s10 Norm
 	Gui, Add, Checkbox, x5 y80 vRecurseLower, Search for files in subfolders?
+	GuiControl,, RecurseLower, 1
 	Gui, Font, s12 Bold
 	Gui, Add, Text, x5 y110, Select File Types:
 	Gui, Font, s10 Norm
@@ -52,7 +55,6 @@ Import:
 	Gui, Add, Checkbox, x5 y175 vaif, .aif
 	Gui, Font, Bold
 	Gui, Add, Checkbox, x5 y195 gSelectAll, Select all file types
-	GuiControl,, RecurseLower, 1
 	Gui, Font, Bold s15
 	Gui, Add, Button, x5 y215 h50 w360 gConfirm vConfirm, Confirm
 	Gui, Show, w370 h270, Import Music
@@ -155,11 +157,12 @@ Confirm:
 	
 	GuiControl, Enable, Confirm
 	Gui, Submit
-	
 	Return
 
 
 Play:
+	GuiControl, Disable, Shuffle
+	GuiControl, Enable, Skip
 	Loop{
 		if (ShuffleChecked = 1){
 			for index, element in ShuffledSongs{
@@ -188,9 +191,6 @@ Play:
 				SoundPlay, %element%, Wait
 			}
 		}
-		if (LoopChecked = 0)
-			GuiControl, Enable, Play
-			Return
 	}
 	Return
 
@@ -224,6 +224,8 @@ Stop:
 	SoundPlay, "urw9thgsegjfbns0e95u9y84.wav"
 	GuiControl,, NowPlaying,
 	GuiControl,, SongProgress, 0
+	GuiControl, Disable, Skip
+	GuiControl, Enable, Shuffle
 	Return
 
 
