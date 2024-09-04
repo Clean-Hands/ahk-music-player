@@ -20,7 +20,7 @@ Gui, Add, Button, x5 y115 w45 gPlay vPlay, Play
 Gui, Add, Checkbox, x53 y121 w56 gShuffle vShuffleChecked, Shuffle
 Gui, Add, Button, x112 y115 w45 gSkip vSkip, Skip
 Gui, Add, Button, x220 y115 w45 gStop vStop, Stop
-Gui, Show, w270, Cole's Music Player v1.0
+Gui, Show, w270, Lazuli's Music Player v1.0
 
 SongList := []
 
