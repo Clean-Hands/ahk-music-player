@@ -1,7 +1,7 @@
 # ahk-music-player
 Locate and play audio files from your computer. Supports .wav, .mp3, and .aif files.
 
-![Screenshot of software](https://imgur.com/GyzNS46.png)
+![Screenshot of software](https://imgur.com/tCXRvbY.png)
 
 ## Importing Music
 
