@@ -11,13 +11,13 @@ Gui, Add, Button, x5 y5 gImport, Import Music
 Gui, Add, Button, x83 y5 gFindFile, Find Current Song
 Gui, Add, Button, x185 y5 gShowLoaded, Loaded Songs
 Gui, Font, s15 Bold Underline
-Gui, Add, Text, y35 x5 w270 +Center , Now Playing:
+Gui, Add, Text, y35 x5 w270 +Center, Now Playing:
 Gui, Font, s12 Norm
 Gui, Add, Edit, w260 +ReadOnly +Center vNowPlaying, %NowPlaying%
 Gui, Add, Progress, w260 h10 cRed Range0-1000000 vSongProgress, 0
 Gui, Font, s10 Norm
 Gui, Add, Button, x5 y115 w45 gPlay vPlay, Play
-Gui, Add, Checkbox, x53 y121 w56 gShuffle vShuffleChecked, Shuffle
+Gui, Add, Checkbox, x52 y121 w60 gShuffle vShuffleChecked, Shuffle
 Gui, Add, Button, x112 y115 w45 gSkip vSkip, Skip
 Gui, Add, Button, x220 y115 w45 gStop vStop, Stop
 Gui, Show, w270, Lazuli's Music Player v1.0
